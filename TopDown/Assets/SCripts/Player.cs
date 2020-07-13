@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+
     }
     private void FixedUpdate()
     {
@@ -37,7 +40,40 @@ public class Player : MonoBehaviour
 
         mousePos = Camera.main.ScreenPointToRay(Input.mousePosition).origin;
 
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            GameObject[] gameObjects;
+            gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+            if (gameObjects.Length != 0)
+            {
+                foreach (var item in gameObjects)
+                {
+                    Destroy(item);
+                }
+            }
+        }
+
     }
-    
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
 
 }
