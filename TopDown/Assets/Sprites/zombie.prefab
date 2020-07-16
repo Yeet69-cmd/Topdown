@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4858207676545605686}
   - component: {fileID: 716030056830004738}
   - component: {fileID: -7201118699745338409}
+  - component: {fileID: 2002150000320203796}
+  - component: {fileID: -4984321765086368692}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Enemy
@@ -185,3 +187,30 @@ PolygonCollider2D:
       - {x: 0.04, y: -0.94}
       - {x: 0.26, y: -0.90999997}
       - {x: 0.44, y: -0.84999996}
+--- !u!114 &2002150000320203796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858207676545605687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2cf963f3923cc4ca204a98304f723a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  enemyTag: Player
+--- !u!114 &-4984321765086368692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858207676545605687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ad36c03e0777846864edcf952af8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
